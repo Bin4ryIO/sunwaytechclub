@@ -5,8 +5,8 @@ export const FETCH_POST = 'FETCH_POST';
 export const FETCH_ASSET = 'FETCH_ASSET';
 
 const API_BASE_URL = 'https://cdn.contentful.com';
-const API_SPACE_ID = '341zfgzoso3v';
-const API_TOKEN = '491714fc5f8d28e15f81c7754e27f213e9865df6d3735f3fea825884ccfda2fa';
+const API_SPACE_ID = 'f2evo7iw3459';
+const API_TOKEN = '88c3fb5fb45926e1bcc5b979591d2e0a0aedd54d1af89de047f7aad53c3db454';
 
 export function fetchPosts() {
   const request = axios.get(`${API_BASE_URL}/spaces/${API_SPACE_ID}/entries?access_token=${API_TOKEN}&content_type=post&order=sys.createdAt`);
@@ -15,7 +15,6 @@ export function fetchPosts() {
     payload: request
   };
 }
-
 export function fetchPost(id) {
   const request = axios.get(`${API_BASE_URL}/spaces/${API_SPACE_ID}/entries/${id}?access_token=${API_TOKEN}&content_type=post`);
   return {
@@ -23,7 +22,6 @@ export function fetchPost(id) {
     payload: request
   };
 }
-
 export function fetchAsset(id) {
   const request = axios.get(`${API_BASE_URL}/spaces/${API_SPACE_ID}/assets/${id}?access_token=${API_TOKEN}`);
 

@@ -1,13 +1,13 @@
 {
   "name": "react-redux-base",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Simple blog app for Redux with React and Babel support",
   "main": "index.js",
-  "repository": "git@github.com:avishekjana/ReactReduxBase.git",
+  "repository": "git@github.com:avishekjana/react-redux-contentful-blog.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch"
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "postinstall": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors --display-error-details",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -26,15 +26,16 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.16.0",
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
     "marked": "^0.3.6",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "react-marked": "^0.3.1",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
-    "react-text-truncate": "^0.10.1",
+    "react-text-truncate": "^0.8.3",
     "redux": "^3.0.4",
     "redux-promise": "^0.5.3"
   }
