@@ -1,0 +1,16 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "graphql": false
+  },
+  "rules": {
+    "arrow-parens": 0,
+    "quotes": [ 2, "single" ],
+    "semi": [ 2, "always" ],
+    "no-underscore-dangle": 0,
+    "react/jsx-filename-extension": 0
+  }
+}
