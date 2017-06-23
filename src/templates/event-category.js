@@ -54,19 +54,19 @@ EventCategoryTemplate.propTypes = propTypes
 export default EventCategoryTemplate
 
 export const pageQuery = graphql`
-  query categoryQuery($id: String!) {
+  query eventCategoryQuery($id: String!) {
     contentfulEventCategory(id: { eq: $id }) {
       title
-      featuredImage {
-        file {
-          url
-        }
-      }
+      # featuredImage {
+      #   file {
+      #     url
+      #   }
+      # }
       description
-      post {
-        id
-        title
-      }
+      # post {
+      #   id
+      #   title
+      # }
     }
   }
 `

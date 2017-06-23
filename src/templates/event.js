@@ -78,13 +78,13 @@ export const pageQuery = graphql`
       }
       description
       content
-      image {
-        file {
-          url
-        }
-      }
+      # image {
+      #   file {
+      #     url
+      #   }
+      # }
       dateTime
-      location
+      # location {}
     }
   }
 `

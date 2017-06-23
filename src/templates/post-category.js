@@ -54,19 +54,19 @@ PostCategoryTemplate.propTypes = propTypes
 export default PostCategoryTemplate
 
 export const pageQuery = graphql`
-  query categoryQuery($id: String!) {
+  query postCategoryQuery($id: String!) {
     contentfulPostCategory(id: { eq: $id }) {
       title
-      featuredImage {
-        file {
-          url
-        }
-      }
-      description
-      post {
-        id
-        title
-      }
+      # featuredImage {
+      #   file {
+      #     url
+      #   }
+      # }
+      # description
+      # post {
+      #   id
+      #   title
+      # }
     }
   }
 `
