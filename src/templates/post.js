@@ -24,16 +24,6 @@ class PostTemplate extends React.Component {
       <div>
         <div style={{ display: `flex`, marginBottom: rhythm(1 / 2) }}>
           <div style={{ height: rhythm(2), width: rhythm(2) }}>
-            <img
-              style={{
-                height: `auto`,
-                width: `auto`,
-                maxWidth: rhythm(2),
-                maxHeight: rhythm(2),
-                marginRight: rhythm(1 / 2),
-              }}
-              src={image[0].file.url}
-            />
           </div>
           <div style={{ display: `flex`, flexDirection: `column` }}>
             <h4 style={{ marginBottom: 0 }}>{title}</h4>
@@ -41,7 +31,6 @@ class PostTemplate extends React.Component {
         </div>
         <h1>{title}</h1>
         <div>
-          <span>Price: ${price}</span>
           <div dangerouslySetInnerHTML={{ __html: content }} />
           {/* <div>
             <span>See other: </span>
@@ -62,6 +51,17 @@ class PostTemplate extends React.Component {
 }
 
 PostTemplate.propTypes = propTypes
+
+{/* <img
+  style={{
+    height: `auto`,
+    width: `auto`,
+    maxWidth: rhythm(2),
+    maxHeight: rhythm(2),
+    marginRight: rhythm(1 / 2),
+  }}
+  src={image[0].file.url}
+/> */}
 
 export default PostTemplate
 

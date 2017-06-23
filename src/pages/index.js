@@ -17,8 +17,6 @@ class IndexPage extends React.Component {
             <div key={post.id}>
               <Link to={`/post/${post.id}/`}>
                 <h4>{post.title}</h4>
-                {post.featuredImage[0].file.url &&
-                  <img src={post.featuredImage[0].file.url} />}
               </Link>
             </div>
           )
@@ -27,6 +25,9 @@ class IndexPage extends React.Component {
     )
   }
 }
+
+//                 {post.featuredImage[0].file.url &&
+                  // <img src={post.featuredImage[0].file.url} />}
 
 IndexPage.propTypes = propTypes
 
