@@ -11,6 +11,7 @@
     "gatsby-plugin-offline": "next",
     "gatsby-source-contentful": "next",
     "lodash": "^4.16.4",
+    "marked": "^0.3.6",
     "react-typography": "^0.15.0",
     "slash": "^1.0.0",
     "typography": "^0.15.8",
@@ -18,7 +19,8 @@
   },
   "keywords": [
     "contentful",
-    "gatsby"
+    "gatsby",
+    "sunway innvators"
   ],
   "license": "MIT",
   "main": "n/a",

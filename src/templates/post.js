@@ -2,6 +2,8 @@ import React from "react"
 import Link from "gatsby-link"
 import * as PropTypes from "prop-types"
 
+import marked from 'marked'
+
 import { rhythm } from "../utils/typography"
 
 const propTypes = {
@@ -9,6 +11,20 @@ const propTypes = {
 }
 
 class PostTemplate extends React.Component {
+  constructor(props) {
+    super(props)
+
+    marked.setOptions({
+      gfm: true,
+      tables: true,
+      breaks: false,
+      pedantic: false,
+      sanitize: true,
+      smartLists: true,
+      smartypants: false
+    })
+  }
+  
   render() {
     const post = this.props.data.contentfulPost
     const {
@@ -23,15 +39,17 @@ class PostTemplate extends React.Component {
     return (
       <div>
         <div style={{ display: `flex`, marginBottom: rhythm(1 / 2) }}>
-          <div style={{ height: rhythm(2), width: rhythm(2) }}>
-          </div>
-          <div style={{ display: `flex`, flexDirection: `column` }}>
+          {/* <div style={{ height: rhythm(2), width: rhythm(2) }}>
+          </div> */}
+          {/* <div style={{ display: `flex`, flexDirection: `column` }}>
             <h4 style={{ marginBottom: 0 }}>{title}</h4>
-          </div>
+          </div> */}
         </div>
         <h1>{title}</h1>
         <div>
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+          <div dangerouslySetInnerHTML={{ __html: marked(content) }} />
+          {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
+          
           {/* <div>
             <span>See other: </span>
             <ul>

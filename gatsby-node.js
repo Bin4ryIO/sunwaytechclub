@@ -20,6 +20,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
           edges {
             node {
               id
+              slug
             }
           }
         }
@@ -29,7 +30,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
         reject(result.errors)
       }
 
-      // Create Event pages
+      // Create Post pages
         const postTemplate = path.resolve(`./src/templates/post.js`)
       // We want to create a detailed page for each
       // post node. We'll just use the Contentful id for the slug.
@@ -42,10 +43,11 @@ exports.createPages = ({graphql, boundActionCreators}) => {
           // as a template component. The `context` is
           // optional but is often necessary so the template
           // can query data specific to each page.
-          path: `/post/${edge.node.id}/`,
+          path: `/post/${edge.node.slug}/`,
           component: slash(postTemplate),
           context: {
-            id: edge.node.id
+            id: edge.node.id,
+            slug: edge.node.slug
           }
         })
       })

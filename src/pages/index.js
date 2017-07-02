@@ -14,8 +14,8 @@ class IndexPage extends React.Component {
         {postEdges.map((postEdge, i) => {
           const post = postEdge.node
           return (
-            <div key={post.id}>
-              <Link to={`/post/${post.id}/`}>
+            <div key={post.slug}>
+              <Link to={`/post/${post.slug}/`}>
                 <h4>{post.title}</h4>
               </Link>
             </div>
@@ -39,6 +39,7 @@ query PageQuery {
     edges {
       node {
         id
+        slug
         title
         featuredImage {
           file {
