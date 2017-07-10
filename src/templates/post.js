@@ -11,7 +11,7 @@ const propTypes = {
 class PostTemplate extends React.Component {
   render() {
     const post = this.props.data.contentfulPost
-    const categories = this.props.data.allContentfulPostCategory
+    const categories = this.props.data.allContentfulPostCategory.edges
     const {
       title,
       content,
@@ -50,10 +50,10 @@ class PostTemplate extends React.Component {
           <div>
             <span>See other: </span>
             <ul>
-              {category.map((category, i) =>
+              {categories.map((category, i) =>
                 <li key={i}>
-                  <Link key={i} to={`/post/category/${category.id}`}>
-                    {category.title}
+                  <Link key={i} to={`/post/category/${category.node.id}`}>
+                    {category.node.title}
                   </Link>
                 </li>
               )}

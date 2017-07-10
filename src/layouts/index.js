@@ -23,7 +23,7 @@ class DefaultLayout extends React.Component {
       >
         <Link style={{ textDecoration: `none` }} to="/">
           <h3 style={{ color: `tomato`, marginBottom: rhythm(1.5) }}>
-            Welcome!
+            Sunway Innovators
           </h3>
         </Link>
         {this.props.children()}

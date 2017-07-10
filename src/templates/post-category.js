@@ -21,7 +21,7 @@ class PostCategoryTemplate extends React.Component {
             marginBottom: rhythm(1 / 2),
           }}
         >
-          <img
+          {/* <img
             style={{
               height: featuredImage.responsiveResolutionheight,
               width: featuredImage.responsiveResolutionwidth,
@@ -29,7 +29,7 @@ class PostCategoryTemplate extends React.Component {
             }}
             src={featuredImage.responsiveResolutionsrc}
             srcSet={featuredImage.responsiveResolutionsrcSet}
-          />
+          /> */}
           <h4 style={{ marginBottom: 0 }}>
             {title}
           </h4>
