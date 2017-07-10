@@ -1,7 +1,7 @@
 {
-  "name": "sunwayinnovators",
+  "name": "sunway-innovators",
   "private": true,
-  "description": "Sunway Innovators frontend built using Gatsbyjs and Contentful",
+  "description": "Sunway Innovators front-end built using GastbyJS and Contentful.",
   "version": "1.0.0",
   "author": "Haolun Tan <haolun0905@gmail.com>",
   "dependencies": {
@@ -10,31 +10,26 @@
     "gatsby-plugin-google-analytics": "next",
     "gatsby-plugin-offline": "next",
     "gatsby-source-contentful": "next",
+    "gatsby-transformer-remark": "next",
     "lodash": "^4.16.4",
-    "marked": "^0.3.6",
     "react-typography": "^0.15.0",
     "slash": "^1.0.0",
     "typography": "^0.15.8",
     "typography-breakpoint-constants": "^0.14.0"
   },
   "keywords": [
-    "contentful",
     "gatsby",
-    "sunway innvators"
+    "contentful",
+    "sunway innovators"
   ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "dev": "gatsby develop",
+    "develop": "gatsby develop",
     "build": "gatsby build",
-    "start": "gatsby serve-build"
+    "start": "gatsby serve"
   },
   "devDependencies": {
-    "eslint": "^4.0.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-loader": "^1.8.0",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.1.0"
+    "babel-plugin-transform-runtime": "^6.23.0"
   }
 }

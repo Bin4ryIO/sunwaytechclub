@@ -40,7 +40,7 @@ class Html extends React.Component {
           <meta charSet="utf-8" />
           <meta
             name="description"
-            content="..."
+            content="Sunway Innovators"
           />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta

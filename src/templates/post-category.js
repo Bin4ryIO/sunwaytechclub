@@ -11,39 +11,45 @@ const propTypes = {
 class PostCategoryTemplate extends React.Component {
   render() {
     const category = this.props.data.contentfulPostCategory
-    const { title, description, featuredImage } = category
-    const imageUrl = featuredImage.file.url
+    const { title, post, featuredImage } = category
     return (
       <div>
-        <div style={{ display: `flex`, marginBottom: rhythm(1 / 2) }}>
-          <div style={{ height: rhythm(2), width: rhythm(2) }}>
-            <img
-              style={{
-                height: `auto`,
-                width: `auto`,
-                maxWidth: rhythm(2),
-                maxHeight: rhythm(2),
-                marginRight: rhythm(1 / 2),
-              }}
-              src={imageUrl}
-            />
-          </div>
-          <div style={{ display: `flex`, flexDirection: `column` }}>
-            <h4 style={{ marginBottom: 0 }}>{title}</h4>
-          </div>
+        <div
+          style={{
+            display: `flex`,
+            alignItems: `center`,
+            marginBottom: rhythm(1 / 2),
+          }}
+        >
+          <img
+            style={{
+              height: featuredImage.responsiveResolutionheight,
+              width: featuredImage.responsiveResolutionwidth,
+              marginRight: rhythm(1 / 2),
+            }}
+            src={featuredImage.responsiveResolutionsrc}
+            srcSet={featuredImage.responsiveResolutionsrcSet}
+          />
+          <h4 style={{ marginBottom: 0 }}>
+            {title}
+          </h4>
         </div>
-        <h1>{title}</h1>
-        {/* <div>
-          <span>Products</span>
+        <h1>
+          {title}
+        </h1>
+        <div>
+          <span>Posts</span>
           <ul>
-            {product &&
-              product.map((p, i) =>
+            {post &&
+              post.map((p, i) =>
                 <li key={i}>
-                  <Link to={`/products/${p.id}`}>{p.productName}</Link>
+                  <Link to={`/post/${p.id}`}>
+                    {p.title}
+                  </Link>
                 </li>
               )}
           </ul>
-        </div> */}
+        </div>
       </div>
     )
   }
@@ -57,15 +63,17 @@ export const pageQuery = graphql`
   query postCategoryQuery($id: String!) {
     contentfulPostCategory(id: { eq: $id }) {
       title
+      post {
+        id
+        title
+      }
       # featuredImage {
-      #   file {
-      #     url
+      #   responsiveResolution(width: 75) {
+      #     src
+      #     srcSet
+      #     height
+      #     width
       #   }
-      # }
-      # description
-      # post {
-      #   id
-      #   title
       # }
     }
   }

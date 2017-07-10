@@ -2,8 +2,6 @@ import React from "react"
 import Link from "gatsby-link"
 import * as PropTypes from "prop-types"
 
-import marked from 'marked'
-
 import { rhythm } from "../utils/typography"
 
 const propTypes = {
@@ -11,57 +9,56 @@ const propTypes = {
 }
 
 class PostTemplate extends React.Component {
-  constructor(props) {
-    super(props)
-
-    marked.setOptions({
-      gfm: true,
-      tables: true,
-      breaks: false,
-      pedantic: false,
-      sanitize: true,
-      smartLists: true,
-      smartypants: false
-    })
-  }
-  
   render() {
     const post = this.props.data.contentfulPost
+    const categories = this.props.data.allContentfulPostCategory
     const {
       title,
-      slug,
-      category,
-      author,
-      description,
       content,
       featuredImage,
+      category,
     } = post
     return (
       <div>
-        <div style={{ display: `flex`, marginBottom: rhythm(1 / 2) }}>
-          {/* <div style={{ height: rhythm(2), width: rhythm(2) }}>
-          </div> */}
-          {/* <div style={{ display: `flex`, flexDirection: `column` }}>
-            <h4 style={{ marginBottom: 0 }}>{title}</h4>
-          </div> */}
+        <div
+          style={{
+            display: `flex`,
+            alignItems: `center`,
+          }}
+        >
+          {/* <img
+            style={{
+              height: featuredImage[0].responsiveResolution.height,
+              width: featuredImage[0].responsiveResolution.width,
+            }}
+            src={featuredImage[0].responsiveResolution.src}
+            srcSet={featuredImage[0].responsiveResolution.srcSet}
+          /> */}
+          <h4>
+            {title}
+          </h4>
         </div>
-        <h1>{title}</h1>
+        <h1>
+          {title}
+        </h1>
         <div>
-          <div dangerouslySetInnerHTML={{ __html: marked(content) }} />
-          {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
-          
-          {/* <div>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: content.childMarkdownRemark.html,
+            }}
+          />
+          <div>
             <span>See other: </span>
             <ul>
-              {categories.map((category, i) =>
+              {category.map((category, i) =>
                 <li key={i}>
-                  <Link key={i} to={`/categories/${category.id}`}>
+                  <Link key={i} to={`/post/category/${category.id}`}>
                     {category.title}
                   </Link>
                 </li>
               )}
             </ul>
-          </div> */}
+          </div>
         </div>
       </div>
     )
@@ -70,37 +67,36 @@ class PostTemplate extends React.Component {
 
 PostTemplate.propTypes = propTypes
 
-{/* <img
-  style={{
-    height: `auto`,
-    width: `auto`,
-    maxWidth: rhythm(2),
-    maxHeight: rhythm(2),
-    marginRight: rhythm(1 / 2),
-  }}
-  src={image[0].file.url}
-/> */}
-
 export default PostTemplate
 
 export const pageQuery = graphql`
   query postQuery($id: String!) {
     contentfulPost(id: { eq: $id }) {
       title
-      slug
+      content {
+        childMarkdownRemark {
+          html
+        }
+      }
+      featuredImage {
+        responsiveResolution(width: 50, height: 50) {
+          src
+          srcSet
+          height
+          width
+        }
+      }
       category {
         id
         title
       }
-      author {
-        id
-        fullName
-      }
-      description
-      content
-      featuredImage {
-        file {
-          url
+    }
+    allContentfulPostCategory {
+      edges {
+        node {
+          id
+          title
+          slug
         }
       }
     }

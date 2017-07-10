@@ -23,10 +23,15 @@ class DefaultLayout extends React.Component {
       >
         <Link style={{ textDecoration: `none` }} to="/">
           <h3 style={{ color: `tomato`, marginBottom: rhythm(1.5) }}>
-            Sunway Innovators
+            Welcome!
           </h3>
         </Link>
         {this.props.children()}
+        <hr style={{ marginTop: rhythm(3) }} />
+        <p>
+          &copy; 2017 Sunway Innovators.
+          {` `}
+        </p>
       </div>
     )
   }
