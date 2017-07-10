@@ -21,6 +21,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           edges {
             node {
               id
+              slug
             }
           }
         }
@@ -45,10 +46,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             // as a template component. The `context` is
             // optional but is often necessary so the template
             // can query data specific to each page.
-            path: `/post/${edge.node.id}/`,
+            path: `/post/${edge.node.slug}/`,
             component: slash(postTemplate),
             context: {
               id: edge.node.id,
+              slug: edge.node.slug
             },
           })
         })
@@ -61,6 +63,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             edges {
               node {
                 id
+                slug
               }
             }
           }
@@ -84,10 +87,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               // as a template component. The `context` is
               // optional but is often necessary so the template
               // can query data specific to each page.
-              path: `/post/category/${edge.node.id}/`,
+              path: `/post/category/${edge.node.slug}/`,
               component: slash(postCategoryTemplate),
               context: {
                 id: edge.node.id,
+                slug: edge.node.slug
               },
             })
           })

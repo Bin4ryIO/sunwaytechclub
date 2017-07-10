@@ -43,7 +43,7 @@ class PostCategoryTemplate extends React.Component {
             {post &&
               post.map((p, i) =>
                 <li key={i}>
-                  <Link to={`/post/${p.id}`}>
+                  <Link to={`/post/${p.slug}`}>
                     {p.title}
                   </Link>
                 </li>
@@ -62,6 +62,7 @@ export default PostCategoryTemplate
 export const pageQuery = graphql`
   query postCategoryQuery($id: String!) {
     contentfulPostCategory(id: { eq: $id }) {
+      id
       title
       post {
         id

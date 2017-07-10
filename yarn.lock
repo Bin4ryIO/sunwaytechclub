@@ -2487,7 +2487,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.1, fbjs@^0.8.9:
+fbjs@^0.8.1, fbjs@^0.8.6, fbjs@^0.8.9:
   version "0.8.12"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.12.tgz#10b5d92f76d45575fd63a217d4ea02bea2f8ed04"
   dependencies:
@@ -2722,13 +2722,25 @@ gatsby-link@next:
     prop-types "^15.5.8"
     ric "^1.3.0"
 
-gatsby-plugin-google-analytics@next:
-  version "1.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.0-beta.6.tgz#91367128beb9a8751798e32dd08cbfd56a8e3404"
+gatsby-plugin-google-analytics@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.1.tgz#849b452b6fad7da5c63230b0944e9eb2f3d3959d"
 
-gatsby-plugin-offline@next:
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-1.0.0-beta.3.tgz#4b2a59274f0e202ba78a41c4fe90cb6149239ab9"
+gatsby-plugin-manifest@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-1.0.1.tgz#caeca2c1fac4160032680cfbe7d9e4b1266f9813"
+  dependencies:
+    bluebird "^3.5.0"
+
+gatsby-plugin-nprogress@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-1.0.1.tgz#1031a75907093dda98f3812d5723f83740decced"
+  dependencies:
+    nprogress "^0.2.0"
+
+gatsby-plugin-offline@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-1.0.1.tgz#1ac610a6bf17cdefb6e8a0789db5c4601712aba8"
   dependencies:
     sw-precache "^5.0.0"
 
@@ -4575,6 +4587,10 @@ npmlog@^4.0.2:
     gauge "~2.7.3"
     set-blocking "~2.0.0"
 
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+
 nth-check@^1.0.1, nth-check@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.1.tgz#9929acdf628fc2c41098deab82ac580cf149aae4"
@@ -5651,6 +5667,12 @@ react-router@^4.1.1:
     path-to-regexp "^1.5.3"
     prop-types "^15.5.4"
     warning "^3.0.0"
+
+react-tap-event-plugin@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-tap-event-plugin/-/react-tap-event-plugin-2.0.1.tgz#316beb3bc6556e29ec869a7293e89c826a9074d2"
+  dependencies:
+    fbjs "^0.8.6"
 
 react-typography@^0.15.0:
   version "0.15.10"

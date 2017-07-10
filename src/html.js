@@ -34,8 +34,19 @@ class Html extends React.Component {
     return (
       <html op="news" lang="en">
         <head>
+          <link
+            rel="preload"
+            href={`/static/montserrat-latin-400.a8338881.woff2`}
+            as="font"
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href={`/static/varela-round-latin-400.a8338881.woff2`}
+            as="font"
+            crossOrigin
+          />
           {headComponents}
-
           <meta name="referrer" content="origin" />
           <meta charSet="utf-8" />
           <meta

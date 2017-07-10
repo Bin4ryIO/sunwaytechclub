@@ -5,6 +5,18 @@ import {
 } from "typography-breakpoint-constants"
 
 const options = {
+  googleFonts: [
+    {
+      name: `Montserrat`,
+      styles: [`400`],
+    },
+    {
+      name: `Varela Round`,
+      styles: [`400`],
+    },
+  ],
+  headerFontFamily: [`Montserrat`, `sans-serif`],
+  bodyFontFamily: [`Varela Round`, `sans-serif`],
   baseFontSize: `18px`,
   baseLineHeight: 1.45,
   blockMarginBottom: 0.75,

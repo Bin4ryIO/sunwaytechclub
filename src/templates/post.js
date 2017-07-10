@@ -14,9 +14,12 @@ class PostTemplate extends React.Component {
     const categories = this.props.data.allContentfulPostCategory.edges
     const {
       title,
+      slug,
+      category,
+      author,
+      description,
       content,
       featuredImage,
-      category,
     } = post
     return (
       <div>
@@ -72,11 +75,17 @@ export default PostTemplate
 export const pageQuery = graphql`
   query postQuery($id: String!) {
     contentfulPost(id: { eq: $id }) {
+      id
       title
+      slug
+      description
       content {
         childMarkdownRemark {
           html
         }
+      }
+      author {
+        id
       }
       featuredImage {
         responsiveResolution(width: 50, height: 50) {

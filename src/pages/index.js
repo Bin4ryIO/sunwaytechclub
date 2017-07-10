@@ -3,15 +3,18 @@ import Link from "gatsby-link"
 import * as PropTypes from "prop-types"
 import { rhythm } from "../utils/typography"
 
+import "typeface-montserrat"
+import "typeface-varela-round"
+
 const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
 const Post = ({ node }) =>
-  <div key={node.id}>
+  <div key={node.slug}>
     <Link
       style={{ color: `inherit`, textDecoration: `none` }}
-      to={`/post/${node.id}/`}
+      to={`/post/${node.slug}/`}
     >
       <div
         style={{
@@ -61,6 +64,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          slug
           title
           featuredImage {
             responsiveResolution(width: 75) {
